@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Belmondo</string>
+
+    <string name="profile_name_title">Profile name</string>
+    <string name="enter_profile">Enter</string>
+    <string name="empty_field">Field can\'t be empty!</string>
+    <string name="first_time_login_title">Login for the first time</string>
+    <string name="your_profile_title">Create Profile</string>
+
+    <string name="fill_form">Please fill information</string>
+    <string name="weight">Weight [kg]</string>
+    <string name="height">Height [cm]</string>
+    <string name="pick_date">Pick birthdate</string>
+
+    <string name="apply_text">Apply</string>
+
+    <string name="at_least_chars">This field must have at least %1$d chars!</string>
+    <string name="max_chars">This field must have maximum %1$d chars!</string>
+
+    <string name="must_be_greater">The value must be greater than %1$d!</string>
+    <string name="must_be_less">The value must be less than %1$d!</string>
+    <string name="future_date">The date must be from past!</string>
+    <string name="date_format">dd/MM/yyyy</string>
+    <string name="bad_date_format">Given data is in bad format. It must be %1$s!</string>
+    <string name="date_must_be_before_now">Date must be before now!</string>
+    <string name="weight_must_be_between">Weight must be between %1$.1f and %2$.1f kg!</string>
+    <string name="height_must_be_between">Height must be between %1$.1f and %2$.1f cm!</string>
+    <string name="bad_number_format">Given number has a bad format. It must be a %1$s number!</string>
+
+    <string name="float_point">floating point</string>
+    <string name="integer">integer</string>
+
+    <string name="error_occured">Error occured</string>
+    <string name="profile_exists">Profile with this name exists!</string>
+    <string name="sqlite_error">Database error occured. Try again later.</string>
+    <string name="title_activity_main">Belmondo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="profile">Profile</string>
+    <string name="history">History</string>
+
+    <string name="double_back_to_exit">Click back twice to exit.</string>
+    <string name="speed">Speed</string>
+</resources>

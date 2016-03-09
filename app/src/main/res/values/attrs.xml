@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <!--
+    <declare-styleable name="LinearLayoutWithClickableIcon">
+        <attr name="iconT" format="integer" />
+        <attr name="iconGravity" format="enum">
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="left" value="4" />
+            <enum name="bottom" value="8" />
+        </attr>
+    </declare-styleable>
+    -->
+
+    <declare-styleable name="CardViewForDisplayStatFeature">
+        <attr name="chartIcon" format="integer" />
+        <attr name="chartIconClicked" format="integer" />
+        <attr name="titleIcon" format="integer" />
+        <attr name="titleText" format="string" />
+        <attr name="contentText" format="string" />
+    </declare-styleable>
+
+</resources>

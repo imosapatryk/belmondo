@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f6700a</color>
+    <color name="colorStopButton">#e40a0a</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#97f8720b</color>
+
+    <color name="black_overlay">#b7f6700a</color>
+    <color name="colorDarkAccent">#b7f6700a</color>
+    <color name="cardDivider">#AADDDDDD</color>
+</resources>

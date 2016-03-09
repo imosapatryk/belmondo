@@ -1,0 +1,63 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileChooseActivity"
+    android:scrollIndicators="none"
+    android:background="@drawable/bg_run4"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:id="@+id/activity_profile_choose_main_layout">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="233dp"
+        android:layout_height="159dp"
+        android:layout_gravity="start|bottom"
+        android:layout_margin="10dp"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        >
+
+        <com.example.paciu.belmondo.ViewsExtends.TextInputLayoutWithHideError
+            android:id="@+id/input_layout_profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            >
+
+            <EditText
+                android:id="@+id/profile_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/profile_name_title"
+                android:maxLength="20"
+                android:gravity="center"
+                android:backgroundTint="@color/colorAccent"
+                android:inputType="textPersonName"
+                />
+        </com.example.paciu.belmondo.ViewsExtends.TextInputLayoutWithHideError>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_profile"
+            android:id="@+id/enter_profile_button"
+            android:layout_gravity="center_horizontal"
+            android:background="#97f8720b"
+            android:singleLine="false"
+            android:clickable="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+             />
+    </LinearLayout>
+</FrameLayout>
