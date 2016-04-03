@@ -1,6 +1,6 @@
 package com.example.paciu.belmondo.DataSource;
 
-import com.example.paciu.belmondo.NoSuchObjectException;
+import com.example.paciu.belmondo.DataSource.Profiles.NoSuchObjectException;
 
 import java.util.List;
 

@@ -22,11 +22,14 @@
     -->
 
     <declare-styleable name="CardViewForDisplayStatFeature">
-        <attr name="chartIcon" format="integer" />
-        <attr name="chartIconClicked" format="integer" />
         <attr name="titleIcon" format="integer" />
         <attr name="titleText" format="string" />
         <attr name="contentText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ChartableCardViewForDisplayStatFeature">
+        <attr name="chartIcon" format="integer" />
+        <attr name="chartIconClicked" format="integer" />
     </declare-styleable>
 
 </resources>

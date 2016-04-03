@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.paciu.belmondo.DataSource.Profiles.NoSuchProfileException;
 import com.example.paciu.belmondo.DataSource.Profiles.ProfileDataSource;
 import com.example.paciu.belmondo.DataSource.Profiles.Validators.ProfileNameValidator;
 import com.example.paciu.belmondo.Validators.StringValidator;
@@ -141,14 +142,10 @@ public class ProfileChooseActivity extends AppCompatActivity implements View.OnC
         finish();
     }
 
-
     protected void startActivityFromLeftToRight(Intent intent){
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
-
-
-
 
     private String getProfileNameFromEditTrimmedText(){
         return profileNameEditText.getText().toString().trim();

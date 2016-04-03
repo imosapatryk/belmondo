@@ -6,8 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
 import com.example.paciu.belmondo.DataSource.DataSource;
-import com.example.paciu.belmondo.NoSuchObjectException;
-import com.example.paciu.belmondo.NoSuchProfileException;
 
 import java.util.ArrayList;
 import java.util.List;

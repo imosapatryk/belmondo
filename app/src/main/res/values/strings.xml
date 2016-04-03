@@ -45,4 +45,20 @@
 
     <string name="double_back_to_exit">Click back twice to exit.</string>
     <string name="speed">Speed</string>
+    <string name="distance">Distance</string>
+    <string name="calories">Calories</string>
+    <string name="chart_title">Chart</string>
+    <string name="choose_chart_title">Choose charts</string>
+    <string name="heart_rate">Heart rate</string>
+    <string name="gps_unavailable">GPS unavailable!</string>
+    <string name="gps_has_been_enabled">GPS has been enabled!</string>
+    <string name="gps_has_been_disabled">GPS has been disabled!</string>
+    <string name="speed_display_km">%1$.1f km/h</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="choose_speed_unit">Choose speed unit</string>
+
+    <string name="map_title">Training map</string>
+
+    <string name="google_api_key" translatable="false">AIzaSyAzKkhPzSmAWso3Vqi2iTvyeIKMwvMZcq8</string>
+    <string name="choose_distance_unit">Choose distance unit</string>
 </resources>

@@ -1,8 +1,5 @@
 package com.example.paciu.belmondo.ViewsExtends;
 
-/**
- * Created by paciu on 09.03.2016.
- */
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -11,8 +8,6 @@ import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,28 +15,24 @@ import android.widget.TextView;
 import com.github.mikephil.charting.charts.LineChart;
 
 import static com.example.paciu.belmondo.R.styleable.CardViewForDisplayStatFeature;
-import static com.example.paciu.belmondo.R.styleable.CardViewForDisplayStatFeature_chartIcon;
-import static com.example.paciu.belmondo.R.styleable.CardViewForDisplayStatFeature_chartIconClicked;
+import static com.example.paciu.belmondo.R.styleable.CardViewForDisplayStatFeature_contentText;
 import static com.example.paciu.belmondo.R.styleable.CardViewForDisplayStatFeature_titleIcon;
 import static com.example.paciu.belmondo.R.styleable.CardViewForDisplayStatFeature_titleText;
-import static com.example.paciu.belmondo.R.styleable.CardViewForDisplayStatFeature_contentText;
 
+/**
+ * Created by paciu on 11.03.2016.
+ */
 public class CardViewForDisplayStatFeature extends CardView {
 
-    private ImageView chartIcon;
-    private Drawable chartIconNotClicked;
-    private Drawable chartIconClicked;
-    private ImageView titleIcon;
+    protected ImageView titleIcon;
 
-    private TextView titleTextView;
-    private TextView contentTextView;
+    protected TextView titleTextView;
+    protected TextView contentTextView;
 
-    private LinearLayout verticalMainLayout;
-    private LinearLayout horizontalTitleLayout;
-    private LinearLayout horizontalContentLayout;
-
-    private boolean chartClicked = false;
-
+    protected LinearLayout verticalMainLayout;
+    protected LinearLayout horizontalTitleLayout;
+    protected LinearLayout horizontalContentLayout;
+    
     public CardViewForDisplayStatFeature(Context context) {
         super(context);
     }
@@ -58,13 +49,14 @@ public class CardViewForDisplayStatFeature extends CardView {
         horizontalTitleLayout = new LinearLayout(context);
         horizontalTitleLayout.setOrientation(LinearLayout.HORIZONTAL);
         LinearLayout.LayoutParams horizontalTitleLayoutParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        horizontalTitleLayoutParams.setMargins(5,10,5,0);
+        horizontalTitleLayoutParams.setMargins(0, 10, 0, 0);
         horizontalTitleLayout.setLayoutParams(horizontalTitleLayoutParams);
+
 
         horizontalContentLayout = new LinearLayout(context);
         horizontalContentLayout.setOrientation(LinearLayout.HORIZONTAL);
         LinearLayout.LayoutParams horizontalContentLayoutParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        horizontalContentLayoutParams.setMargins(5,0,5,0);
+        horizontalContentLayoutParams.setMargins(5, 0, 5, 0);
         horizontalContentLayoutParams.gravity = Gravity.CENTER;
         horizontalContentLayout.setLayoutParams(horizontalTitleLayoutParams);
 
@@ -81,14 +73,16 @@ public class CardViewForDisplayStatFeature extends CardView {
         if(titleIconDrawable != null){
             titleIcon = new ImageView(context);
             titleIcon.setImageDrawable(titleIconDrawable);
-            LinearLayout.LayoutParams titleIconLayoutParams = new LinearLayout.LayoutParams(50, 50, 0.1f);
+            LinearLayout.LayoutParams titleIconLayoutParams = new LinearLayout.LayoutParams(30, 30);
             titleIconLayoutParams.gravity = Gravity.START | Gravity.TOP;
+            titleIconLayoutParams.topMargin = 2;
+            titleIconLayoutParams.leftMargin = 5;
             titleIcon.setLayoutParams(titleIconLayoutParams);
         }
 
         titleTextView = new TextView(context);
-        titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-        titleTextView.setTextColor(Color.parseColor("#B3B3B3"));
+        titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+        titleTextView.setTextColor(Color.parseColor("#97f8720b"));
 
         String title = attrArray.getString(CardViewForDisplayStatFeature_titleText);
         if(title == null){
@@ -98,33 +92,18 @@ public class CardViewForDisplayStatFeature extends CardView {
         titleTextView.setText(title);
         LinearLayout.LayoutParams titleTextViewLayoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0.98f);
         titleTextViewLayoutParams.gravity = Gravity.START;
+        titleTextViewLayoutParams.leftMargin = 5;
         titleTextView.setLayoutParams(titleTextViewLayoutParams);
-
-
-
-        chartIconNotClicked = attrArray.getDrawable(CardViewForDisplayStatFeature_chartIcon);
-        if(chartIconNotClicked != null){
-
-            chartIcon = new ImageView(context);
-            chartIcon.setImageDrawable(chartIconNotClicked);
-            LinearLayout.LayoutParams chartIconLayoutParams = new LinearLayout.LayoutParams(50, 50, 0.1f);
-
-            chartIconLayoutParams.gravity = Gravity.END | Gravity.TOP;
-            chartIcon.setLayoutParams(chartIconLayoutParams);
-        }
-
-        chartIconClicked = attrArray.getDrawable(CardViewForDisplayStatFeature_chartIconClicked);
-
         if(titleIcon != null)
             horizontalTitleLayout.addView(titleIcon);
         horizontalTitleLayout.addView(titleTextView);
-        if(chartIcon != null)
-            horizontalTitleLayout.addView(chartIcon);
+
 
         contentTextView = new TextView(context);
-        contentTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 40);
+        contentTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
         contentTextView.setTextColor(Color.parseColor("#A3A3A3"));
         contentTextView.setGravity(Gravity.CENTER);
+
 
         String content = attrArray.getString(CardViewForDisplayStatFeature_contentText);
         if(content == null){
@@ -138,51 +117,29 @@ public class CardViewForDisplayStatFeature extends CardView {
         contentTextView.setLayoutParams(titleTextViewLayoutParams);
 
         horizontalContentLayout.addView(contentTextView);
+
+        contentTextView.setPadding(0,0,0,5);
+        horizontalTitleLayout.setPadding(0, 0, 0, 0);
+        horizontalContentLayout.setPadding(0, 0, 0, 0);
+
     }
 
     public CardViewForDisplayStatFeature(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public void setChartIconOnClickListener(OnClickListener listener){
-        if(chartIcon != null){
-            chartIcon.setOnClickListener(listener);
-        }
-    }
-
     public void setContentText(String text){
         contentTextView.setText(text);
     }
 
-    public void setChartIconToClicked(){
-        if(chartIcon != null && chartIconClicked != null){
-            chartIcon.setImageDrawable(chartIconClicked);
+    public void setTitleText(String text){
+        titleTextView.setText(text);
+    }
+
+    public void setTitleTextViewOnClickListener(OnClickListener listener){
+        if(titleTextView != null){
+            titleTextView.setOnClickListener(listener);
         }
     }
 
-    public void setChartIconToNotClicked(){
-        if(chartIcon != null && chartIconNotClicked != null){
-            chartIcon.setImageDrawable(chartIconNotClicked);
-        }
-    }
-
-    public boolean isChartClicked() {
-        return chartClicked;
-    }
-
-    public void setChartClicked(boolean chartClicked) {
-        if(chartClicked){
-            setChartIconToClicked();
-        } else setChartIconToNotClicked();
-
-        this.chartClicked = chartClicked;
-    }
-
-    public void toggleContentWithChart(LineChart chart){
-        if(this.horizontalContentLayout.getChildCount() > 0) {
-            this.horizontalContentLayout.removeViewAt(0);
-            this.horizontalContentLayout.addView(chart);
-        }
-
-    }
 }

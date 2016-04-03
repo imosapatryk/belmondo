@@ -10,206 +10,158 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:weightSum="1">
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/frag_for_stat_card_view2"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        card_view:cardCornerRadius="2dp"
-        card_view:cardElevation="2dp"
-        android:layout_margin="4dp">
 
-            <LinearLayout
-                android:id="@+id/frag_for_stat_content2"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:layout_gravity="center">
-                <!--
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:src="@drawable/stopwatch_icon"
-                    android:layout_gravity="start|center_vertical"
-                    android:layout_weight="0.1"
-                    /> -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textSize="40sp"
-                        android:textColor="#A3A3A3"
-                        android:text="0:00:00"
-                        android:id="@+id/frag_for_stat_time_text_view"
-                        android:layout_gravity="center"
-
-                        />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="30sp"
-                        android:textColor="#A3A3A3"
-                        android:text="0"
-                        android:id="@+id/frag_for_stat_milis_text_view"
-                        android:layout_gravity="start|bottom"
-                        android:paddingBottom="3dp"
-                         />
-
-                </LinearLayout>
-            </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
- <!--
-        <android.support.v7.widget.CardView
+        <com.example.paciu.belmondo.ViewsExtends.TimerCardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/frag_for_stat_card_view"
-            android:layout_gravity="center"
+            android:id="@+id/timer_card_view_for_stat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             card_view:cardCornerRadius="2dp"
             card_view:cardElevation="2dp"
-            android:layout_margin="4dp"
-            >
+            android:layout_margin="4dp">
+        </com.example.paciu.belmondo.ViewsExtends.TimerCardView>
 
-            <LinearLayout
+        <com.example.paciu.belmondo.ViewsExtends.SpeedCardView
+
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:custom_card="http://schemas.android.com/apk/res/com.example.paciu.belmondo"
+            android:id="@+id/frag_for_stat_card_view_speed_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="2dp"
+            android:layout_margin="4dp"
+
+            custom_card:contentText="- km/h"
+            custom_card:titleText="@string/speed"
+            custom_card:titleIcon="@drawable/speed52_icon">
+        </com.example.paciu.belmondo.ViewsExtends.SpeedCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.example.paciu.belmondo.ViewsExtends.DistanceCardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:custom_card="http://schemas.android.com/apk/res/com.example.paciu.belmondo"
+                android:id="@+id/distance_card_view"
+                android:layout_weight="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                android:layout_margin="4dp"
+                custom_card:contentText="- km"
+                custom_card:titleText="@string/distance"
+                custom_card:titleIcon="@drawable/distance_icon">
 
-                <LinearLayout
+            </com.example.paciu.belmondo.ViewsExtends.DistanceCardView>
+
+            <com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature
+
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:custom_card="http://schemas.android.com/apk/res/com.example.paciu.belmondo"
+                android:id="@+id/frag_for_stat_card_view5"
+                android:layout_weight="0.5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                android:layout_margin="4dp"
+                custom_card:contentText="- kcal"
+                custom_card:titleText="@string/calories"
+                custom_card:titleIcon="@drawable/calorie_icon">
+
+            </com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature>
+        </LinearLayout>
+
+        <com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature
+
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:custom_card="http://schemas.android.com/apk/res/com.example.paciu.belmondo"
+            android:id="@+id/frag_for_stat_card_view_bottom_chart"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="2dp"
+            card_view:cardElevation="2dp"
+            android:layout_margin="4dp"
+            custom_card:contentText=""
+            custom_card:titleText="@string/chart_title"
+            custom_card:titleIcon="@drawable/combo_chart">
+
+            <LinearLayout
+                android:id="@+id/frag_card_place_for_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="30dp"
+                android:paddingStart="10dp"
+                android:paddingRight="10dp"
+                >
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/frag_stat_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="5dp"
-                    >
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/chart"
-                        android:layout_gravity="end|top"
-                        android:layout_weight="0.01"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/frag_for_stat_title"
-                        android:layout_gravity="start"
-                        android:textColor="#B3B3B3"
-                        android:text="Time"
-                        android:textSize="20sp"
-                        android:layout_weight="0.98"
-                        />
+                    android:layout_height="150dp">
 
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/chart"
-                        android:layout_gravity="end|top"
-                        android:layout_weight="0.01"
-                        />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/frag_for_stat_content"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal|center_vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="40sp"
-                        android:textStyle="bold"
-                        android:textColor="#A3A3A3"
-                        android:text="Text here"
-                        android:gravity="center"
-                        android:id="@+id/frag_for_stat_time_text_view2" />
-
-                </LinearLayout>
-
+                </com.github.mikephil.charting.charts.LineChart>
             </LinearLayout>
 
-        </android.support.v7.widget.CardView> -->
-    <com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature
+        </com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature>
 
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        xmlns:custom_card="http://schemas.android.com/apk/res/com.example.paciu.belmondo"
-        android:id="@+id/frag_for_stat_card_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        card_view:cardCornerRadius="2dp"
-        card_view:cardElevation="2dp"
-        android:layout_margin="4dp"
-        custom_card:chartIcon="@drawable/chart"
-        custom_card:chartIconClicked="@drawable/chart_clicked2"
-        custom_card:titleText="@string/speed"
-        custom_card:titleIcon="@drawable/stopwatch_icon"
-        android:layout_weight="4.19">
 
-    </com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature>
 
     </LinearLayout>
- <!--
-    <android.support.design.widget.CoordinatorLayout
+    <LinearLayout
+        android:id="@+id/fabs_timercontrol_layout"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_gravity="bottom">
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:gravity="bottom|center"
+        android:layout_gravity="bottom"
+        >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/newInterval_fab"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_anchor="@id/fabs_timercontrol_layout"
+            app:layout_anchorGravity="bottom"
+            android:src="@drawable/restart_icon48"
+            android:elevation="10dp"
+            app:fabSize="normal"
+            app:backgroundTint="@color/colorPrimaryDark"
+            android:clickable="true"
+            android:layout_gravity="bottom|center">
+        </android.support.design.widget.FloatingActionButton>
 
+        <com.example.paciu.belmondo.ViewsExtends.FloatingActionButtonPlayPause
+            android:id="@+id/start_pause_fab"
+            android:layout_height="120dp"
+            android:layout_width="120dp"
+            app:layout_anchor="@id/fabs_timercontrol_layout"
+            app:layout_anchorGravity="center"
+            android:elevation="10dp"
+            android:src="@drawable/play_icon50"
+            android:scaleType="center"
+            app:fabSize="normal"
+            app:backgroundTint="@color/colorPrimary"
+            android:clickable="true"
+            android:layout_gravity="bottom|center"/>
 
-            <Button
-                android:id="@+id/frag_stat_button_restart"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_alignParentBottom="true"
-                android:layout_alignEnd="@+id/frag_stat_button_start"
-                android:layout_marginEnd="61dp" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/stop_fab"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:layout_anchor="@id/fabs_timercontrol_layout"
+            app:layout_anchorGravity="bottom"
+            android:src="@drawable/stop_icon"
+            android:elevation="10dp"
+            app:fabSize="normal"
+            app:backgroundTint="@color/colorStopButton"
+            android:clickable="true"
+            android:layout_gravity="bottom|center" />
 
-            <Button
-                android:id="@+id/frag_stat_button_stop"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="57dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignStart="@+id/frag_stat_button_start" />
-
-            <Button
-                android:id="@+id/frag_stat_button_start"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_alignParentTop="false"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentRight="false"
-                android:layout_alignParentBottom="true" />
-
-
-
-
-        </RelativeLayout>
-
-    </android.support.design.widget.CoordinatorLayout> -->
-
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

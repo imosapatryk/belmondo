@@ -1,4 +1,4 @@
-package com.example.paciu.belmondo;
+package com.example.paciu.belmondo.DataSource.Profiles;
 
 /**
  * Created by paciu on 04.03.2016.

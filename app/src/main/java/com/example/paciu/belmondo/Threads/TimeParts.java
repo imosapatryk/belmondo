@@ -17,6 +17,33 @@ public class TimeParts {
         this.hours = hours;
     }
 
+    public TimeParts(long _100MilisCount) {
+        fillTimeParts(_100MilisCount);
+    }
+
+    public void fillTimeParts(long _100MilisTimeElapsed){
+        setMilis((int) _100MilisTimeElapsed % 10);
+        setSeconds(((int) _100MilisTimeElapsed / 10) % 60);
+        setMinutes(((int) _100MilisTimeElapsed / 600) % 60);
+        setHours(((int) _100MilisTimeElapsed / 36000) % 24);
+    }
+
+    @Override
+    public String toString() {
+        return  getTimeStringWithoutMilis()  +
+                ":" + milis;
+    }
+
+    public String getTimeStringWithoutMilis(){
+        return hours +
+                ":" + (minutes < 10 ? 0 : "") + minutes +
+                ":" + (seconds < 10 ? 0 : "") + seconds;
+    }
+
+    public String getMilisString(){
+        return String.valueOf(milis);
+    }
+
     public int getMilis() {
         return milis;
     }
@@ -49,19 +76,5 @@ public class TimeParts {
         this.hours = hours;
     }
 
-    @Override
-    public String toString() {
-        return  getTimeStringWithoutMilis()  +
-                ":" + milis;
-    }
-
-    public String getTimeStringWithoutMilis(){
-        return hours +
-                ":" + (minutes < 10 ? 0 : "") + minutes +
-                ":" + (seconds < 10 ? 0 : "") + seconds;
-    }
-
-    public String getMilisString(){
-        return String.valueOf(milis);
-    }
 }
+
