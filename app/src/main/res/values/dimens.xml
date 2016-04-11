@@ -8,4 +8,15 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
+
+    <dimen name="registration_button_margins">15dp</dimen>
+    <dimen name="registration_button_height">35dp</dimen>
+    <dimen name="registration_button_textsize_sp">15sp</dimen>
+    <dimen name="registration_button_margin_left">30dp</dimen>
+    <dimen name="login_register_widget_height">200dp</dimen>
+    <dimen name="login_register_height">150dp</dimen>
+    <dimen name="discipline_row_height">60dp</dimen>
+    <dimen name="discipline_row_image_width">40dp</dimen>
+    <dimen name="discipline_row_image_height">40dp</dimen>
+
 </resources>

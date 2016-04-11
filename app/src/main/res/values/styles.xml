@@ -21,4 +21,11 @@
     <style name="DatePickerDialogTheme" parent="Theme.AppCompat.Dialog">
         <item name="android:colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="FacebookLoginButton">
+        <item name="android:textSize">@dimen/registration_button_textsize_sp</item>
+        <item name="android:background">@drawable/com_facebook_button_background</item>
+        <item name="android:layout_marginTop">@dimen/registration_button_margins</item>
+    </style>
+
 </resources>

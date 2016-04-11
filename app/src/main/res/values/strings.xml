@@ -1,6 +1,24 @@
 <resources>
     <string name="app_name">Belmondo</string>
 
+
+    <string name="login_title">Login</string>
+    <string name="register_title"><u>Registration</u></string>
+    <string name="register_with_facebook">Register with Facebook</string>
+    <string name="login_with_facebook_title">Login with Facebook</string>
+    <string name="tap_twice_to_exit">Press back two times to exit</string>
+    <string name="facebook_app_id">1353580211335635</string>
+    <string name="facebook_login_cancel_title">Facebook login cancelled</string>
+    <string name="facebook_login_error_title">Facebook login error</string>
+    <string name="logout_facebook">Logout</string>
+    <string name="logged_in">Logged in</string>
+    <string name="login_failed">Login failed</string>
+    <string name="login_error_title">Login failed</string>
+    <string name="positive_button_text">OK</string>
+    <string name="login_cancelled">Login cancelled</string>
+    <string name="login_offline_button_text">Login offline</string>
+
+
     <string name="profile_name_title">Profile name</string>
     <string name="enter_profile">Enter</string>
     <string name="empty_field">Field can\'t be empty!</string>
@@ -61,4 +79,12 @@
 
     <string name="google_api_key" translatable="false">AIzaSyAzKkhPzSmAWso3Vqi2iTvyeIKMwvMZcq8</string>
     <string name="choose_distance_unit">Choose distance unit</string>
+    <string name="register_offline_button_title">Register offline</string>
+    <string name="choose_discipline_dialog_title">Choose discipline</string>
+    <string name="action_choose_discipline">discipline</string>
+
+    <string name="walking">Walking</string>
+    <string name="running">Running</string>
+    <string name="cycling">Cycling</string>
+    <string name="history_title">History</string>
 </resources>

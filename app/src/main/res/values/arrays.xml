@@ -9,4 +9,14 @@
         <item>km</item>
         <item>miles</item>
     </string-array>
+    <string-array name="disciplines">
+        <item>@string/walking</item>
+        <item>@string/running</item>
+        <item>@string/cycling</item>
+    </string-array>
+    <integer-array name="disciplinesIcons">
+        <item>@drawable/speed_icon</item>
+        <item>@drawable/distance_icon</item>
+        <item>@drawable/calorie_icon</item>
+    </integer-array>
 </resources>
