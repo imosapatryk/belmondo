@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/register_with_facebook_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/registration_button_height"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        android:text="@string/register_offline_button_title"
+        android:textSize="@dimen/registration_button_textsize_sp"/>
+
+    <com.facebook.login.widget.LoginButton
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/registration_button_height"
+        android:layout_marginTop="@dimen/registration_button_margins"/>
+</LinearLayout>

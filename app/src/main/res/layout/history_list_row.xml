@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/history_row_discipline_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.1"
+            android:src="@drawable/walking"
+            android:layout_gravity="center_vertical"/>
+        <LinearLayout
+            android:id="@+id/history_row_result_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.9"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/history_row_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="date_title"
+                android:textColor="#BBBBBB"
+                android:textSize="15sp"
+                android:textStyle=""
+                android:layout_gravity="right" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="89dp"
+                android:layout_height="match_parent"
+                android:gravity="end|top"></LinearLayout>
+
+            <TextView
+                android:id="@+id/history_row_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="duration"
+                android:textColor="#aaaaaa"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_weight="1.50" />
+
+            <LinearLayout
+                android:id="@+id/history_row_stats_container"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_margin="2dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/history_row_avgspeed_iv"
+                        android:src="@drawable/speedometr_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        />
+                    <TextView
+                        android:id="@+id/history_row_avgspeed_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="avg"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp">
+                    <ImageView
+                        android:id="@+id/history_row_maxspeed_iv"
+                        android:src="@drawable/speed_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+                    <TextView
+                        android:id="@+id/history_row_maxspeed_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="avg"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp">
+                    <ImageView
+                        android:id="@+id/history_row_distance_iv"
+                        android:src="@drawable/distance_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+                    <TextView
+                        android:id="@+id/history_row_distance_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="avg"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp">
+                    <ImageView
+                        android:id="@+id/history_row_calories_iv"
+                        android:src="@drawable/calorie_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+                    <TextView
+                        android:id="@+id/history_row_calories_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="avg"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/history_row_map_image"/>
+</LinearLayout>

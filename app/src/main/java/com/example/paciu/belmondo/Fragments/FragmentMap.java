@@ -10,12 +10,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout.*;
+import android.widget.FrameLayout.LayoutParams;
 
+import com.example.paciu.belmondo.Discipline.DisciplineObservable;
+import com.example.paciu.belmondo.Location.LocationObservable;
+import com.example.paciu.belmondo.Map.TrainingMap;
 import com.example.paciu.belmondo.R;
-import com.example.paciu.belmondo.google.LocationSourceProvider;
-import com.example.paciu.belmondo.google.TrainingMap;
-import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
@@ -27,8 +27,8 @@ public class FragmentMap  extends Fragment{
     private ViewGroup contentViewGroup;
     private TrainingMap trainingMap;
 
-    public FragmentMap(Context context, LocationSourceProvider sourceProvider){
-        trainingMap = new TrainingMap(sourceProvider);
+    public FragmentMap(Context context, LocationObservable locationObservable, DisciplineObservable disciplineObservable){
+        trainingMap = new TrainingMap(locationObservable, disciplineObservable);
         setupMapView(context, trainingMap);
     }
 
@@ -44,7 +44,6 @@ public class FragmentMap  extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setHasOptionsMenu(true);
         setMenuVisibility(true);
     }

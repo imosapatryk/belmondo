@@ -1,0 +1,14 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- These settings headers are only used on tablets. -->
+
+    <header
+        android:fragment="com.example.paciu.belmondo.SettingsActivity$ProfilePreferenceFragment"
+        android:icon="@drawable/editprofile24"
+        android:title="@string/pref_header_profile" />
+
+    <header
+        android:fragment="com.example.paciu.belmondo.SettingsActivity$UnitsPreferenceFragment"
+        android:icon="@drawable/line24"
+        android:title="@string/pref_header_units" />
+
+</preference-headers>

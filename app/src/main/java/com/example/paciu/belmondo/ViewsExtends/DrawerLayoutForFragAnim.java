@@ -3,7 +3,6 @@ package com.example.paciu.belmondo.ViewsExtends;
 import android.content.Context;
 import android.support.v4.widget.DrawerLayout;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 
 /**
  * Created by paciu on 31.03.2016.

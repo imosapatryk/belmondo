@@ -57,22 +57,22 @@
 
             </com.example.paciu.belmondo.ViewsExtends.DistanceCardView>
 
-            <com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature
+            <com.example.paciu.belmondo.ViewsExtends.CaloriesCardView
 
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 xmlns:custom_card="http://schemas.android.com/apk/res/com.example.paciu.belmondo"
-                android:id="@+id/frag_for_stat_card_view5"
+                android:id="@+id/frag_for_stat_card_view_calories"
                 android:layout_weight="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 card_view:cardCornerRadius="2dp"
                 card_view:cardElevation="2dp"
                 android:layout_margin="4dp"
-                custom_card:contentText="- kcal"
+                custom_card:contentText="-"
                 custom_card:titleText="@string/calories"
                 custom_card:titleIcon="@drawable/calorie_icon">
 
-            </com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature>
+            </com.example.paciu.belmondo.ViewsExtends.CaloriesCardView>
         </LinearLayout>
 
         <com.example.paciu.belmondo.ViewsExtends.CardViewForDisplayStatFeature

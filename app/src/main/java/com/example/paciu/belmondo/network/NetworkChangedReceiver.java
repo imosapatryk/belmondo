@@ -1,4 +1,4 @@
-package com.example.paciu.belmondo.network;
+package com.example.paciu.belmondo.Network;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -22,7 +22,6 @@ public class NetworkChangedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         boolean newConnectedState = isConnectedToTheInternet(context);
-
         if(newConnectedState != connected){
             if(newConnectedState){
                 callOnInternetConnected();

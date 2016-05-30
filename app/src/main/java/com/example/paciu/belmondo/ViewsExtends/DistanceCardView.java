@@ -6,16 +6,23 @@ import android.content.DialogInterface;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.example.paciu.belmondo.Distance.DistanceCounter;
-import com.example.paciu.belmondo.Distance.DistanceInMetres;
+import com.example.paciu.belmondo.Distance.DistanceChangedListener;
+import com.example.paciu.belmondo.Distance.DistanceObservable;
 import com.example.paciu.belmondo.R;
+
+import org.jscience.physics.amount.Amount;
+
+import javax.measure.quantity.Length;
+import javax.measure.unit.SI;
+import javax.measure.unit.Unit;
 
 /**
  * Created by paciu on 01.04.2016.
  */
-public class DistanceCardView  extends CardViewForDisplayStatFeature  implements View.OnClickListener{
+public class DistanceCardView  extends CardViewForDisplayStatFeature  implements View.OnClickListener, DistanceChangedListener{
 
-    private DistanceInMetres distanceInMetres;
+    private DistanceObservable distanceObservable;
+    private Amount<Length> distance;
     private int whichDistanceUnit;
 
     public DistanceCardView(Context context) {
@@ -34,33 +41,29 @@ public class DistanceCardView  extends CardViewForDisplayStatFeature  implements
     }
 
     protected void setup(){
-        distanceInMetres = new DistanceInMetres();
+        distance = Amount.valueOf(0, SI.METER);
         setOnTitleTextViewClickListener(this);
     }
 
-    public void setDistanceInMetres(float value){
-        this.distanceInMetres.setDistance(value);
+    public void setDistance(Amount<Length> distance){
+        this.distance = distance;
+        updateContentText(false);
+    }
 
+    public void updateContentText(boolean init){
         String [] unitArray = getContext().getResources().getStringArray(R.array.distanceUnit);
         String unit = unitArray.length > whichDistanceUnit && whichDistanceUnit > 0 ? unitArray[whichDistanceUnit] : unitArray[0];
-        this.setContentText(String.format("%1$.2f", switchSpeedInUnit(whichDistanceUnit)) + " " + unit);
+        if(init)
+            this.setContentText("- " + unit);
+        else {
+            Unit<Length> lengthUnit = ((Unit<Length>) Unit.valueOf(unit));
+            this.setContentText(String.format("%1$.2f", (float) distance.doubleValue(lengthUnit)) + " " + unit);
+        }
     }
 
     protected void setOnTitleTextViewClickListener(OnClickListener listener){
         if(titleTextView != null){
             titleTextView.setOnClickListener(listener);
-        }
-    }
-
-    protected float switchSpeedInUnit(int whichInUnitsArray){
-        switch (whichInUnitsArray){
-            case 0:{
-                return distanceInMetres.toKilometres();
-            }
-            case 1:{
-                return (float) distanceInMetres.toMiles();
-            }
-            default: return distanceInMetres.toKilometres();
         }
     }
 
@@ -71,7 +74,7 @@ public class DistanceCardView  extends CardViewForDisplayStatFeature  implements
         }
     }
 
-    protected void setDisplayUnit(int which){
+    public void setDisplayUnit(int which){
         whichDistanceUnit = which;
     }
 
@@ -85,8 +88,23 @@ public class DistanceCardView  extends CardViewForDisplayStatFeature  implements
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        setDistanceInMetres(distanceInMetres.getDistance());
+                        setDistance(distance);
                     }
                 }).setTitle(R.string.choose_distance_unit).show();
+    }
+
+    public void setDistanceObservable(DistanceObservable observable){
+        if(distanceObservable != null){
+            distanceObservable.removeDistanceListener(this);
+        }
+        distanceObservable = observable;
+        if(distanceObservable != null) {
+            distanceObservable.addDistanceListener(this);
+        }
+    }
+
+    @Override
+    public void onDistanceChanged(Amount<Length> distance) {
+        setDistance(distance);
     }
 }

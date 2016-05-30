@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:enabled="false"
+        android:key="profile_name"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:title="@string/pref_profile_name" />
+
+    <SwitchPreference
+        android:switchTextOn="@string/pref_profile_male"
+        android:switchTextOff="@string/pref_profile_female"
+        android:textOn="@string/pref_profile_male"
+        android:textOff="@string/pref_profile_female"
+        android:key="profile_sex"
+        android:title="@string/pref_profile_sex" />
+
+    <EditTextPreference
+        android:enabled="false"
+        android:key="profile_birthdate"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:title="@string/pref_profile_birthdate" />
+
+    <EditTextPreference
+        android:inputType="number"
+        android:maxLength="4"
+        android:key="profile_weight"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_profile_weight" />
+
+    <EditTextPreference
+        android:inputType="number"
+        android:maxLength="4"
+        android:key="profile_height"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_profile_height" />
+
+</PreferenceScreen>

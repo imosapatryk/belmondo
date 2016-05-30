@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
 
 import com.example.paciu.belmondo.R;
+import com.example.paciu.belmondo.Timer.Playable;
 
 public class FloatingActionButtonPlayPause extends FloatingActionButton {
 
@@ -35,25 +36,25 @@ public class FloatingActionButtonPlayPause extends FloatingActionButton {
         }
     }
 
-    public void clickMethodBasedOnStartPauseResumeObject(IStartPauseResume startPauseResume){
+    public void clickMethodBasedOnStartPauseResumeObject(Playable playable){
         if (!this.isPlayState()) {
-                startOrResumeButtonAndChangeButtonState(startPauseResume);
+                startOrResumeButtonAndChangeButtonState(playable);
         } else {
-           pauseTimerAndChangeButtonState(startPauseResume);
+           pauseTimerAndChangeButtonState(playable);
         }
     }
 
-    protected void startOrResumeButtonAndChangeButtonState(IStartPauseResume startPauseResume){
-        if (startPauseResume.isPaused()) {
-            startPauseResume.resume();
+    protected void startOrResumeButtonAndChangeButtonState(Playable playable){
+        if (playable.isPaused()) {
+            playable.resume();
         } else {
-            startPauseResume.start();
+            playable.start();
         }
         setPlayState(true);
     }
 
-    protected void pauseTimerAndChangeButtonState(IStartPauseResume startPauseResume){
-        startPauseResume.pause();
+    protected void pauseTimerAndChangeButtonState(Playable playable){
+        playable.pause();
         setPlayState(false);
     }
 

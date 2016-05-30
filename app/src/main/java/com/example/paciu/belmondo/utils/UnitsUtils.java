@@ -1,4 +1,4 @@
-package com.example.paciu.belmondo.utils;
+package com.example.paciu.belmondo.Utils;
 
 import android.content.Context;
 

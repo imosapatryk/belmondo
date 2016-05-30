@@ -9,4 +9,5 @@
     <color name="black_overlay">#b7f6700a</color>
     <color name="colorDarkAccent">#b7f6700a</color>
     <color name="cardDivider">#AADDDDDD</color>
+    <color name="result_details_card_view_title_color">#A3A3A3</color>
 </resources>

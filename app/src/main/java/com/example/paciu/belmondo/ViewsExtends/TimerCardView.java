@@ -12,17 +12,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.paciu.belmondo.R;
-import com.example.paciu.belmondo.Threads.TimeIntervalAdapterItem;
-import com.example.paciu.belmondo.Threads.TimeParts;
-import com.example.paciu.belmondo.Threads.TimerIntervalAdapter;
-import com.example.paciu.belmondo.utils.UnitsUtils;
+import com.example.paciu.belmondo.ViewAdapters.TimeIntervalAdapterItem;
+import com.example.paciu.belmondo.Timer.TimeParts;
+import com.example.paciu.belmondo.ViewAdapters.TimerIntervalAdapter;
+import com.example.paciu.belmondo.Utils.UnitsUtils;
 
 import java.util.ArrayList;
 
 /**
  * Created by paciu on 15.03.2016.
  */
-public class TimerCardView extends CardView implements IUpdateFromTimer{
+public class TimerCardView extends CardView{
 
     private LinearLayout horizontalContentLayout;
     private TextView timeTextView;
@@ -168,7 +168,6 @@ public class TimerCardView extends CardView implements IUpdateFromTimer{
         valueAnimator.start();
     }
 
-    @Override
     public void update(TimeParts totalTimeParts, TimeParts intervalTimePars) {
         timeTextView.setText(totalTimeParts.getTimeStringWithoutMilis());
         milisTextView.setText(totalTimeParts.getMilisString());
@@ -183,5 +182,9 @@ public class TimerCardView extends CardView implements IUpdateFromTimer{
         removeAllItemsFromIntervalListView();
         intervalsListView.setVisibility(GONE);
         animateTimerTextViewsToItsOriginalSize();
+    }
+
+    public String getTimeText(){
+        return this.timeTextView.getText().toString() + ":" + milisTextView.getText().toString();
     }
 }

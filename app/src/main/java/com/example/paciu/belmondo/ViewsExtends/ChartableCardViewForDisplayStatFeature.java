@@ -5,19 +5,14 @@ package com.example.paciu.belmondo.ViewsExtends;
  */
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
+
 import static com.example.paciu.belmondo.R.styleable.ChartableCardViewForDisplayStatFeature;
 import static com.example.paciu.belmondo.R.styleable.ChartableCardViewForDisplayStatFeature_chartIcon;
 import static com.example.paciu.belmondo.R.styleable.ChartableCardViewForDisplayStatFeature_chartIconClicked;

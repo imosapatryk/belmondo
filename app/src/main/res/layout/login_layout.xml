@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="@dimen/login_register_widget_height">
+
+    <com.example.paciu.belmondo.Logging.LoginOffline.LoginOfflineButtonBelmondo
+        android:id="@+id/login_offline_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/registration_button_height"
+        android:background="@color/colorAccent"
+        android:text="@string/login_offline_button_text"/>
+
+    <com.facebook.login.widget.LoginButton
+        android:visibility="gone"
+        xmlns:fb="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/login_with_facebook_button"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/registration_button_height"
+        android:layout_marginTop="@dimen/registration_button_margins"
+        fb:com_facebook_login_text="@string/login_with_facebook_title"
+        fb:com_facebook_logout_text="@string/logout_facebook"
+        style="@style/FacebookLoginButton"/>
+
+</LinearLayout>

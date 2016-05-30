@@ -1,0 +1,8 @@
+package layout.Logging;
+
+/**
+ * Created by paciu on 03.04.2016.
+ */
+public interface FragmentTag {
+    String getFragmentTag();
+}
