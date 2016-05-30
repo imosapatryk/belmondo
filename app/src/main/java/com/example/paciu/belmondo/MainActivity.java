@@ -154,7 +154,6 @@ public class MainActivity extends AppCompatActivity
         speedCardView.updateContentText(true);
 
         distanceCardView = (DistanceCardView)findViewById(R.id.distance_card_view);
-        distanceCardView.setDistanceObservable(distanceDataProvider);
         distanceCardView.setDisplayUnit(SettingsActivity.UnitsPreferenceFragment.getDistanceUnitIndex(getApplicationContext()));
         distanceCardView.updateContentText(true);
 
@@ -442,6 +441,7 @@ public class MainActivity extends AppCompatActivity
                 timerCardView.resetAndHideIntervalListView();
                 chooseDisciplineMenuItem.setEnabled(false);
                 distanceDataProvider = new DistanceDataProviderBaseOnLocation(locationDataProvider, disciplineProvider.getCurrentDiscipline().getDisciplineOnMapResolution());
+                distanceCardView.setDistanceObservable(distanceDataProvider);
                 speedDataProvider.setEnabled(true);
 
 
