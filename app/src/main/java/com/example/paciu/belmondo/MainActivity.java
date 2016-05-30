@@ -443,6 +443,7 @@ public class MainActivity extends AppCompatActivity
                 distanceDataProvider = new DistanceDataProviderBaseOnLocation(locationDataProvider, disciplineProvider.getCurrentDiscipline().getDisciplineOnMapResolution());
                 distanceCardView.setDistanceObservable(distanceDataProvider);
                 speedDataProvider.setEnabled(true);
+                mapFragment.getTrainingMap().getRouteDrawer().setEnabled(true);
 
 
                 Profile profile = AppProfileManager.getInstance().getProfile();

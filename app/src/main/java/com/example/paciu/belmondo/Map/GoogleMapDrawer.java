@@ -27,6 +27,7 @@ public class GoogleMapDrawer implements MapDrawer {
         drawingEnabled = true;
         polylineOptions = new PolylineOptions().geodesic(true);
         polyline = googleMap.addPolyline(polylineOptions);
+        drawingEnabled = false;
     }
 
     @Override

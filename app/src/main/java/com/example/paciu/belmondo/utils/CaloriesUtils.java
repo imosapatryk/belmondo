@@ -17,5 +17,4 @@ public class CaloriesUtils {
     public static double getCaloriesBurned(double bmr, float met, float durationInHours){
         return (bmr/24)*met*durationInHours;
     }
-
 }
